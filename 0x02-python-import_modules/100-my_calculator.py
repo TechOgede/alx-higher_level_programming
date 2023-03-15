@@ -5,7 +5,7 @@ def main():
     import sys
     operators = ["+", "-", "*", "/"]
     if len(sys.argv) != 4:
-        print("Usage ./100-my_calculator.py <a> <operator> <b>")
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     if sys.argv[2] not in operators:
         print("Unknown operator. Available operators: +, -, * and /")
