@@ -2,12 +2,12 @@
 def roman_to_int(roman_string):
     if not roman_string:
         return 0
+    if not isinstance(roman_string, str):
+        return 0
     num = 0
     i = 0
     r_nums = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
     roman = roman_string.upper()
-    if len(roman) == 1:
-        return r_nums[roman]
     while i < len(roman):
         curr = roman[i]
         if (i + 1 < len(roman)):
