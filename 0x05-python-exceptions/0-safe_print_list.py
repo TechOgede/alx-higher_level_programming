@@ -9,8 +9,7 @@ def safe_print_list(my_list=[], x=0):
         for x in my_list:
             i += 1
             print(x, end="")
-        if my_list:
-            print()
+        print()
         return (i)
     else:
         for i in range(x):
