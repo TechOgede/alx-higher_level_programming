@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+''' This module defines Node class and SinglyLinkedList class '''
+
+
 class Node:
     '''Defines the node of a singly linked list'''
     def __init__(self, data, next_node=None):
@@ -25,6 +28,7 @@ class Node:
             value (int): denotes the data attr of a Node object '''
         if not isinstance(value, int):
             raise TypeError("next_node must be a Node object")
+        self.__data = value
 
     @property
     def next_node(self):
