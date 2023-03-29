@@ -8,7 +8,7 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         '''Args:
             size (int): positive integer. Denotes the size of a square.
-            position (tuple): consists of 2 positive integers. Denotes coordinates
+            position (tuple): consists of 2 +ve integers. Denotes coordinates
         '''
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -16,17 +16,14 @@ class Square:
             raise ValueError("size must be >= 0")
         if not isinstance(position, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            if not isinstance(position[0], int) or\
-             not isinstance(position[1], int):
-                raise TypeError("position must be a tuple\
-                                of 2 positive integers")
-            if len(position) != 2:
-                raise TypeError("position must be a tuple\
-                                of 2 positive integers")
-            if position[0] < 0 or position[1] < 0:
-                raise TypeError("position must be a tuple\
-                                of 2 positive integers")
+        if not isinstance(position[0], int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not isinstance(position[1], int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if position[0] < 0 or position[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
         self.__size = size
 
@@ -42,9 +39,9 @@ class Square:
         ''' Setter for the priv var, size
         Args:
           value: value to which size is updated'''
-        if not isinstance(self.__size, int):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if self.__size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
