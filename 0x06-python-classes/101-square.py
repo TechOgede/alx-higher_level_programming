@@ -104,5 +104,6 @@ class Square:
                     string += " "
                 for k in range(self.__size):
                     string += "#"
-                string += "\n"
+                if i is not (self.__size - 1):
+                    string += "\n"
         return string
