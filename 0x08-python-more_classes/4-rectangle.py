@@ -34,7 +34,7 @@ class Rectangle:
 
     def __repr__(self):
         ''' Returns a string that Python can parse and run as code '''
-        return "Rectangle" + "(" + str(self.__width) + ", " + str(self.__height) + ")"
+        return f"Rectangle({self.__width}, {self.__height})"
 
     @property
     def width(self):
