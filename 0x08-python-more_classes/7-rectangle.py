@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    ''' A Rectangle is a 2D shape that  consists of a width and a length '''
+    ''' A Rectangle is a 2D shape that  consists of a width and a height '''
 
     number_of_instances = 0
     print_symbol = "#"
