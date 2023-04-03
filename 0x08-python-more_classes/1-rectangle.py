@@ -9,8 +9,16 @@ class Rectangle:
         Args:
          width (int): width of rectangle
          height (int): height of rectangle '''
+        if not isinstance(width, int):
+            raise TypeError('width must be an integer')
+        if width < 0:
+            raise ValueError('width must be >= 0')
         self.__width = width
-        self.__height = height
+        if not isinstance(height, int):
+            raise TypeError('height must be an integer')
+        if height < 0:
+            raise ValueError('height must be >= 0')
+        self._height = height
 
     @property
     def width(self):
@@ -29,7 +37,7 @@ class Rectangle:
     @property
     def height(self):
         ''' Getter for the height attribute '''
-        return self.__width
+        return self.__height
 
     @height.setter
     def height(self, value):
