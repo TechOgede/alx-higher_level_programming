@@ -24,12 +24,13 @@ class Rectangle:
         ''' Displays the rectangle using '#' '''
         string = ""
         if self.__height == 0 or self.__width == 0:
-            return string
-        for i in range(self.__height):
-            for i in range(self.__width):
-                string += "#"
-            string += "\n"
-        return string
+            pass
+        else:
+            for i in range(self.__height):
+                for i in range(self.__width):
+                    string += "#"
+                string += "\n"
+        return string[:-1]
 
     @property
     def width(self):
