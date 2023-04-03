@@ -22,9 +22,9 @@ class Rectangle:
 
     def __str__(self):
         ''' Displays the rectangle using '#' '''
-        if self.__height == 0 or self.__width == 0:
-            return
         string = ""
+        if self.__height == 0 or self.__width == 0:
+            return string
         for i in range(self.__height):
             for i in range(self.__width):
                 string += "#"
