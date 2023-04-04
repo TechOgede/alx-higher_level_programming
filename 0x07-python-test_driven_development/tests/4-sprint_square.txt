@@ -1,0 +1,47 @@
+EXAMPLE TEST FILE FOR THE FUNCTION, print_square()
+
+
+    >>> print_square = __import__('4-print_square').print_square
+
+With a positive integer:
+    >>> print_square(5) #doctest: +NORMALIZE_WHITESPACE
+    #####
+    #####
+    #####
+    #####
+    #####
+
+With a negative float:
+    >>> print_square(-5.5) #doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+        File "/root/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 12, in print_square
+        raise TypeError('size must be an integer')
+    TypeError: size must be an integer
+
+With a float > 0:
+    >>> print_square(5.5) #doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+        File "/root/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 14, in print_square
+        raise TypeError('size must be an integer')
+    TypeError: size must be an integer
+
+With a negative integer:
+    >>> print_square(-5) #doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+        File "/root/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 16, in print_square
+        raise ValueError('size must be >= 0')
+    ValueError: size must be >= 0
+
+When size is zero:
+    >>> print_square(0) #doctest: +NORMALIZE_WHITESPACE
+
+With a string:
+    >>> print_square('5') #doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+        File "/root/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 14, in print_square
+        raise TypeError('size must be an integer')
+    TypeError: size must be an integer

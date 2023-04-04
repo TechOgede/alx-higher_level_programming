@@ -1,0 +1,23 @@
+Example text file for the function, say_my_name
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+passing in two strings:
+    >>> say_my_name("Samuel", "Ilozumba")
+    My name is Samuel Ilozumba
+
+passing in an integer:
+    >>> say_my_name(50)
+    Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+        File "/root/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 15, in say_my_name
+        raise TypeError('first_name must be a string')
+    TypeError: first_name must be a string
+
+With first name alone:
+    >>> say_my_name("Samuel") #doctest: +NORMALIZE_WHITESPACE
+    My name is Samuel
+
+With first_name as an empty string:
+    >>> say_my_name("") #doctest: +NORMALIZE_WHITESPACE
+    My name is
