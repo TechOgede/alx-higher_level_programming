@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 def matrix_mul(m_a, m_b):
     ''' Returns a matrix thats the product of m_a and m_b
