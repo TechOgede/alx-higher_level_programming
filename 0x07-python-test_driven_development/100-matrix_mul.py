@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+''' This module defines a function that multiplies two matrices
+    Also features extensive error checks '''
+
 
 def matrix_mul(m_a, m_b):
     ''' Returns a matrix thats the product of m_a and m_b
