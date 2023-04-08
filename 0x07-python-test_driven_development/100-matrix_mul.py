@@ -36,7 +36,7 @@ def matrix_mul(m_a, m_b):
         if not list_b:
             raise ValueError("m_b can't be empty")
         for num_b in list_b:
-            if not isinstance(num_a, (int, float)):
+            if not isinstance(num_b, (int, float)):
                 raise TypeError('m_b should contain only integers or floats')
         len_list_b = len(m_b[0])
         if len_list_b != len(list_b):
