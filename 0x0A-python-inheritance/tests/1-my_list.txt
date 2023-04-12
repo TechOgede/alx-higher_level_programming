@@ -38,3 +38,7 @@ Appending a dict to the list:
     Traceback (most recent call last):
         ...
     TypeError: '<' not supported between instances of 'dict' and 'int'
+
+MyList is a subclass of list:
+    >>> issubclass(MyList, list)
+    True
