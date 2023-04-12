@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 ''' This module defines a class, Student'''
 
+
 class Student:
     ''' Defines a student. Has first name, last name, and age as attributes.
         Also posesses a method that returns a dict description of instance '''
@@ -29,4 +30,4 @@ class Student:
             json: string to replace existing __dict__
         '''
         for attr in json:
-           self.__dict__[attr] = json[attr]
+            self.__dict__[attr] = json[attr]
