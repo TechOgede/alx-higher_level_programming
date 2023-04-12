@@ -1,0 +1,28 @@
+This is an example file for the class, BaseGeometry, and its methods
+
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+
+Calling the method with one string and one int:
+    >>> bg.integer_validator("my_int", 12)
+
+With two strings:
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
+
+passing a negative int:
+    >>> bg.integer_validator("distance", -4)
+    Traceback (most recent call last):
+        ...
+    ValueError: distance must be greater than 0
+
+Check if BaseGeometry is a subclass of object:
+    >>> issubclass(BaseGeometry, object)
+    True
+
+Check if bg is an instance of BaseGeometry:
+    >>> type(bg) is BaseGeometry
+    True
