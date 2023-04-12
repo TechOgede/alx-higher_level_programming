@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-''' This module defines a class, Student'''
 
 
 class Student:
@@ -29,4 +27,5 @@ class Student:
            Args:
             json: string to replace existing __dict__
         '''
-        self.__dict__ = json
+        for attr in json:
+           self.__dict__[attr] = json[attr]
