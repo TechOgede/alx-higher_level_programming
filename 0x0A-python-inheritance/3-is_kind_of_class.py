@@ -5,7 +5,7 @@
 
 
 def is_same_class(obj, a_class):
-    ''' Checks if an object is an instance of a class or an inherited class 
+    ''' Checks if an object is an instance of a class or an inherited class
         Args:
             obj: the object
             a_class: the class or any class which a_class inherits
