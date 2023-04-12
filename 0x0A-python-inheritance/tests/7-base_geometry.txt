@@ -4,7 +4,49 @@ This is an example file for the class, BaseGeometry, and its methods
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
     >>> bg = BaseGeometry()
 
-Calling the method with one string and one int:
+Checking instance type:
+    >>> type(bg)
+    <class '7-base_geometry.BaseGeometry'>
+
+Checking that bg is of type 'BaseGeometry'
+    >>> type(bg) is BaseGeometry
+    True
+
+Checking that bg is an instance of 'BaseGeometry'
+    >>> isinstance(bg, BaseGeometry)
+    True
+
+Check that BaseGeometry is a subclass of itself
+    >>> issubclass(BaseGeometry, BaseGeometry)
+    True
+
+Displaying the attributes and methods of the instance, bg
+
+>>> dir(bg)
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'area', 'integer_validator']
+
+
+Displaying the attributes and methods of the class, BaseGeometry
+
+>>> dir(BaseGeometry)
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'area', 'integer_validator']
+
+
+Checking the __dict__atrribute of bg
+    >>> bg.__dict__
+    {}
+
+Checking the __dict__ atrribute of the class, BaseGeometry
+
+>>> BaseGeometry.__dict__ #doctest: +ELLIPSIS
+mappingproxy({'__module__': '7-base_geometry', '__doc__': ' Has two public instance methods, area() and integer_validator', 'area': <function BaseGeometry.area at 0x...>, 'integer_validator': <function BaseGeometry.integer_validator at 0x...>, '__dict__': <attribute '__dict__' of 'BaseGeometry' objects>, '__weakref__': <attribute '__weakref__' of 'BaseGeometry' objects>})
+
+
+Displaying the class name
+    >>> BaseGeometry.__name__
+    'BaseGeometry'
+
+Calling the integer_validation method with one string and one int:
     >>> bg.integer_validator("my_int", 12)
 
 With two strings:
