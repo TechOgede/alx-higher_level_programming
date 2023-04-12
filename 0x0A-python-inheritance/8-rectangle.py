@@ -5,6 +5,7 @@
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     ''' Has two atrributes, width and height.
         They represent the sides of a rectange '''
