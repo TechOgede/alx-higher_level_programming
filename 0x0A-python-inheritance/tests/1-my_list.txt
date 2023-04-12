@@ -12,3 +12,19 @@ Passing in ints:
     [10, 2, 0]
     >>> my_list.print_sorted()
     [0, 2, 10]
+
+Appending a string to the list:
+    >>> my_list2 = MyList()
+    >>> my_list2.append(4)
+    >>> my_list2.append(2)
+    >>> my_list2.append('6')
+    >>> my_list2.append(0)
+    >>> my_list2.print_sorted()
+    Traceback (most recent call last):
+        ...
+    TypeError: '<' not supported between instances of 'str' and 'int'
+
+With an empty list:
+    >>> my_list3 = MyList()
+    >>> my_list3.print_sorted()
+    []
