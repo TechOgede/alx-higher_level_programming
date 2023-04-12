@@ -28,3 +28,13 @@ With an empty list:
     >>> my_list3 = MyList()
     >>> my_list3.print_sorted()
     []
+
+Appending a dict to the list:
+    >>> my_list6 = MyList()
+    >>> my_list6.append(10)
+    >>> my_list6.append({'BestSchool' : 'ALX'})
+    >>> my_list6.append(3)
+    >>> my_list6.print_sorted()
+    Traceback (most recent call last):
+        ...
+    TypeError: '<' not supported between instances of 'dict' and 'int'
