@@ -1,0 +1,14 @@
+This is an example file for the class, MyList
+
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Passing in ints:
+    >>> my_list = MyList()
+    >>> my_list.append(10)
+    >>> my_list.append(2)
+    >>> my_list.append(0)
+    >>> print(my_list)
+    [10, 2, 0]
+    >>> my_list.print_sorted()
+    [0, 2, 10]
