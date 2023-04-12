@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 ''' This module defiens a function that an object to a textfile
     using JSON representation '''
 
