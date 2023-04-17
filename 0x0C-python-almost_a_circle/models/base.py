@@ -59,9 +59,9 @@ class Base:
         from models.square import Square
         ''' Returns an instance with all attributes already set '''
         if 'size' in dictionary:
-            inst = Square(1)
+            inst = cls(1)
         else:
-            inst = Rectangle(1, 2)
+            inst = cls(1, 2)
         inst.update(**dictionary)
         return inst
 
