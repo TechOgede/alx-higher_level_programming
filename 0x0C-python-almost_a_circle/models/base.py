@@ -55,8 +55,6 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        from models.rectangle import Rectangle
-        from models.square import Square
         ''' Returns an instance with all attributes already set '''
         if 'size' in dictionary:
             inst = cls(1)
@@ -99,32 +97,34 @@ class Base:
             writer.writerows(list_csv)
 
     @classmethod
-    def create_from_csv(cls, *list_):
-        from models.rectangle import Rectangle
-        from models.square import Square
-        ''' Creates an object from its CSV representation'''
-        if len(list_) == 5:
-            inst = Rectangle(1, 2)
-        else:
-            inst = Square(3, 4)
-        inst.update(*list_)
-
-        return inst
-
-    @classmethod
     def load_from_file_csv(cls):
         ''' Deserializes csv data from a file '''
         list_inst = []
         try:
-            f = open(f'{cls.__name__}.csv', "r", newline="")
+            f = open(f'{cls.__name__}.csv', "r")
         except FileNotFoundError:
             pass
         else:
             reader = csv.reader(f)
+            dict_inst = {}
+            keys = ['id', 'width', 'height', 'size', 'x', 'y']
             for row in reader:
-                inst = cls.create_from_csv(*row)
-                list_inst.append(inst)
-            print('bulaba3')
+                row = list(map(int, row))
+                i = j = 0
+            # create a dict for each row
+                while i < len(keys) and j < len(row):
+                    if (cls.__name__ == 'Rectangle' and keys[i] == 'size'):
+                        i += 1
+                        continue
+                    if (cls.__name__ == 'Square' and
+                       (keys[i] == 'width' or keys[i] == 'height')):
+                        i += 1
+                        continue
+                    dict_inst[keys[i]] = row[j]
+                    i += 1
+                    j += 1
+                list_inst.append(cls.create(**dict_inst))
+                dict_inst = {}
         finally:
             f.close()
             return list_inst
