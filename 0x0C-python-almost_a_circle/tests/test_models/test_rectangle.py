@@ -42,12 +42,12 @@ class TestRectangle(unittest.TestCase):
         self.assertIn('height', Rectangle.__dict__)
 
         # check that each value is assigned to the apropriate attr
+        self.assertEqual(self.r1.id, 1)
         self.assertEqual(self.r2.width, 3)
         self.assertEqual(self.r2.height, 6)
         self.assertEqual(self.r2.x, 2)
         self.assertEqual(self.r2.y, 1)
         self.assertEqual(self.r2.id, 3)
-        self.assertEqual(self.r1.id, 1)
 
     # check that setters work as they should
     def test_setters(self):

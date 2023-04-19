@@ -14,6 +14,12 @@ class TestBase(unittest.TestCase):
         self.b2 = Base(12)
         self.b3 = Base()
 
+    def tearDown(self):
+        ''' Clean up '''
+        self.b1.decrement()
+        self.b2.decrement()
+        self.b3.decrement()
+
     def test_base(self):
         ''' Tests for class type and presence of attrs '''
         self.assertTrue(issubclass(Base, object))
