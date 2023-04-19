@@ -117,15 +117,15 @@ class Rectangle(Base):
         ''' Updates the values of the instance attrs'''
         if len(args) >= 1:
             if len(args) > 0:
-                super().__init__(a_list[0])
+                super().__init__(args[0])
             if len(args) > 1:
-                self.width = a_list[1]
+                self.width = args[1]
             if len(args) > 2:
-                self.height = a_list[2]
+                self.height = args[2]
             if len(args) > 3:
-                self.x = a_list[3]
+                self.x = args[3]
             if len(args) > 4:
-                self.y = a_list[4]
+                self.y = args[4]
         else:
             for k, v in kwargs.items():
                 if k == 'id':
