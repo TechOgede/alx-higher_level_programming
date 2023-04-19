@@ -68,11 +68,11 @@ class Base:
         ''' Returns a list of instances '''
         inst_list = []
         try:
-            f = open(f'{cls.__name__}.json', "r", encoding='utf-8')
+            f = open(f'{cls.__name__}.json', "r")
         except FileNotFoundError:
             pass
         else:
-            dict_list = cls.from_json_string(f.read())
+            dict_list = Base.from_json_string(f.read())
             for dict_ in dict_list:
                 inst_list.append(cls.create(**dict_))
         finally:
