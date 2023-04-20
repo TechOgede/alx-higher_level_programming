@@ -5,6 +5,8 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+import sys
+import io
 
 
 class TestRectangle(unittest.TestCase):
@@ -88,3 +90,52 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError) as e:
             self.r2.y = -1
         self.assertEqual(str(e.exception), 'y must be >= 0')
+
+    def test_area(self):
+        ''' tests the area method '''
+        self.assertEqual(self.r1.area(), 8)
+
+    def test_display(self):
+        ''' tests the display method '''
+        buf = io.StringIO()
+        sys.stdout = buf
+        self.r1.display()
+        self.assertEqual(buf.getvalue(), '##\n##\n##\n##\n')
+        # checking that x and y are handled
+        buf.seek(0)
+        buf.write("")
+        buf.seek(0)
+        self.r2.display()
+        self.assertEqual(buf.getvalue(),
+                         '\n  ###\n  ###\n  ###\n  ###\n  ###\n  ###\n')
+
+    def test_str(self):
+        ''' tests the str output '''
+        str_ = str(self.r1)
+        self.assertEqual(str_, '[Rectangle] (1) 0/0 - 2/4')
+
+    def test_update(self):
+        ''' Tests the update method '''
+        self.r1.update(4, 5, 10, 3, 6)
+        self.assertEqual(self.r1.id, 4)
+        self.assertEqual(self.r1.width, 5)
+        self.assertEqual(self.r1.height, 10)
+        self.assertEqual(self.r1.x, 3)
+        self.assertEqual(self.r1.y, 6)
+
+        # passing keyword args
+        self.r1.update(id=10, width=4, height=5, x=5, y=4)
+        self.assertEqual(self.r1.id, 10)
+        self.assertEqual(self.r1.width, 4)
+        self.assertEqual(self.r1.height, 5)
+        self.assertEqual(self.r1.x, 5)
+        self.assertEqual(self.r1.y, 4)
+
+    def test_to_dictionary(self):
+        '''Tests the to_dictionary method '''
+        dict_ = self.r1.to_dictionary()
+        self.assertIn('id', dict_)
+        self.assertIn('width', dict_)
+        self.assertIn('height', dict_)
+        self.assertIn('x', dict_)
+        self.assertIn('y', dict_)

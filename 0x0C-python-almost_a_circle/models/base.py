@@ -17,8 +17,7 @@ class Base:
             self.id = Base.__nb_objects
 
     def decrement(self):
-        ''' Reduces the value of __nb_objects by 1
-            In a sense, it 'deletes' the instance '''
+        ''' decrements the class attriubte '''
         if Base.__nb_objects:
             Base.__nb_objects -= 1
 
@@ -75,8 +74,8 @@ class Base:
             dict_list = Base.from_json_string(f.read())
             for dict_ in dict_list:
                 inst_list.append(cls.create(**dict_))
-        finally:
             f.close()
+        finally:
             return inst_list
 
     @classmethod
@@ -125,6 +124,6 @@ class Base:
                     j += 1
                 list_inst.append(cls.create(**dict_inst))
                 dict_inst = {}
-        finally:
             f.close()
+        finally:
             return list_inst
