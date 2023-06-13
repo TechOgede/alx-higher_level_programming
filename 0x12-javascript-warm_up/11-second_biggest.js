@@ -3,10 +3,10 @@
 let nums = process.argv.slice(2);
 nums = nums.map((num) => Number(num));
 
-let max = -Infinity;
+let max = nums[0];
 let prev;
 
-for (let i = 0; i < nums.length; i++) {
+for (let i = 1; i < nums.length; i++) {
   if (nums[i] > max) {
     prev = max;
     max = nums[i];
