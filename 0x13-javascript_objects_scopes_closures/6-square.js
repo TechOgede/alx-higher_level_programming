@@ -14,7 +14,7 @@ module.exports = class Square extends Rectangle {
       let str = '';
       for (let i = 0; i < this.height; i++) {
         for (let i = 0; i < this.width; i++) {
-          str += 'C';
+          str += c;
         }
         console.log(str);
         str = '';
