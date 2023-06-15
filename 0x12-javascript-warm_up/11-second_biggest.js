@@ -3,18 +3,13 @@
 let nums = process.argv.slice(2);
 nums = nums.map((num) => Number(num));
 
-let max = nums[0];
-let prev = max;
-
-for (let i = 1; i < nums.length; i++) {
-  if (nums[i] > max) {
-    prev = max;
-    max = nums[i];
-  }
-}
+let max = Math.max.apply(null, nums);
+const idx = nums.indexOf(max);
+nums.splice(idx, 1);
+max = Math.max.apply(null, nums);
 
 if (nums.length > 1) {
-  console.log(prev);
+  console.log(max);
 } else {
   console.log(0);
 }
