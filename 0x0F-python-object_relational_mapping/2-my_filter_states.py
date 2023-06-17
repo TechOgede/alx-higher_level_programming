@@ -14,7 +14,7 @@ def main():
     data_base = sys.argv[3]
     state = '"' + sys.argv[4] + '"'
     query = "SELECT * FROM states WHERE name={} ORDER BY id".format(state)
-    print(state)
+
     db = MySQLdb.connect(host='localhost', port=3306, user=user_name,
                          passwd=pass_word, db=data_base, charset='utf8')
     cur = db.cursor()
