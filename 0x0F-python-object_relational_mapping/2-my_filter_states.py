@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-''' This script lists all states with a name starting with N
-    from the database hbtn_0c_0_usa '''
+''' This script lists vlaues of a state
+    in the states table of hbtn_0c_0_usa.
+    The state name is passed as command line arg'''
 
 
 def main():
@@ -11,12 +12,13 @@ def main():
     user_name = sys.argv[1]
     pass_word = sys.argv[2]
     data_base = sys.argv[3]
-    state = sys.argv[4]
-
+    state = '"' + sys.argv[4] + '"'
+    query = "SELECT * FROM states WHERE name={} ORDER BY id".format(state)
+    print(state)
     db = MySQLdb.connect(host='localhost', port=3306, user=user_name,
                          passwd=pass_word, db=data_base, charset='utf8')
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id", (state,))
+    cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
         print(row)
