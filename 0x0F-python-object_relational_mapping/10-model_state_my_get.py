@@ -21,7 +21,7 @@ def main():
 
     name = sys.argv[4]
     state = session.query(State).\
-             filter(State.name == name).order_by(State.id).one_or_none()
+        filter(State.name == name).order_by(State.id).one_or_none()
     if not state:
         print('Not found')
     else:
