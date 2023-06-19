@@ -22,7 +22,7 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).outerjoin(State.cities)
+    states = session.query(State).join(State.cities)
     states = states.order_by(State.id, City.id).all()
 
     for state in states:
