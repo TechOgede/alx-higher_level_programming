@@ -13,7 +13,8 @@ def main():
     pass_word = sys.argv[2]
     data_base = sys.argv[3]
     state = '"' + sys.argv[4] + '"'
-    query = "SELECT * FROM states WHERE name={} ORDER BY id".format(state)
+    query = "SELECT * FROM states \
+            WHERE name COLLATE utf8mb4_bin = {} ORDER BY id".format(state)
 
     db = MySQLdb.connect(host='localhost', port=3306, user=user_name,
                          passwd=pass_word, db=data_base, charset='utf8')
