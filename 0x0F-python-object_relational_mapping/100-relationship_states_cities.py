@@ -2,6 +2,7 @@
 ''' This script creates the State "CAlifornia" with the
 City "San Francisco" from the database hbtn_0e_100_usa '''
 
+
 def main():
     ''' Driver funcion '''
     import sys
@@ -20,7 +21,9 @@ def main():
     session = Session()
 
     california = State(name='California')
-    san_fran = City(name='San Francisco', state=california)
+    san_fran = City(name='San Francisco')
+
+    california.cities.append(san_fran)
 
     session.add_all([california, san_fran])
 
