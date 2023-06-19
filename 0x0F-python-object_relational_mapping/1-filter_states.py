@@ -15,7 +15,9 @@ def main():
     db = MySQLdb.connect(host='localhost', port=3306, user=user_name,
                          passwd=pass_word, db=data_base, charset='utf8')
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
+    cur.execute("SELECT * FROM states" +
+                " WHERE name COLLATE utf8mb4_bin" +
+                " LIKE 'N%' ORDER BY id")
     rows = cur.fetchall()
     for row in rows:
         print(row)
