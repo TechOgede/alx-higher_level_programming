@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 ''' This scirpt takes a URL, sends a request to the URL and
-displays the value of the 'X-Request-Id' variable or 
+displays the value of the 'X-Request-Id' variable or
 the error code, if any'''
 
 
@@ -18,7 +18,6 @@ def main():
             print(response.read().decode('utf-8'))
     except urllib.error.HTTPError as e:
         print(f'Error code: {e.code}')
-    
 
 
 if __name__ == '__main__':
