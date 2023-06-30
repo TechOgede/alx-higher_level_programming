@@ -12,7 +12,7 @@ def main():
     user = sys.argv[1]
     pwd = sys.argv[2]
 
-    url = 'https://api.github.com/user'
+    url = f'https://api.github.com/{user}'
     headers = {'Accept': 'application/vnd.github+json',
                'Authorization': f'Bearer {pwd}',
                'X-GitHub-Api-Version': '2022-11-28'}
