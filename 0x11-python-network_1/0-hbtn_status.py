@@ -5,8 +5,6 @@
 def main():
     ''' Driver function '''
     import urllib.request
-    import shutil
-    import tempfile
 
     url = 'https://alx-intranet.hbtn.io/status'
     req = urllib.request.Request(url)
