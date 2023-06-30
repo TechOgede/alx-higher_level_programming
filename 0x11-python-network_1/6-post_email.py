@@ -14,5 +14,6 @@ def main():
     res = requests.post(url, data=value)
     print(res.text)
 
+
 if __name__ == '__main__':
     main()
