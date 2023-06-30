@@ -13,7 +13,7 @@ def main():
 
     res = requests.get(url)
     if res.status_code >= 400:
-        print(res.status_code)
+        print(f'Error code: {res.status_code}')
     else:
         print(res.text)
 
