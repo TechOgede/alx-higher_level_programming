@@ -10,8 +10,8 @@ def main():
     import urllib.request
 
     url = sys.argv[1]
-    email = sys.argv[2]
-    req = urllib.request.Request(url, email)
+    data = {email: sys.argv[2]}
+    req = urllib.request.Request(url, data)
     with urllib.request.urlopen(req) as response:
         page = response.read()
 
