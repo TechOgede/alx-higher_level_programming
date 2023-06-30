@@ -15,7 +15,7 @@ def main():
     res = requests.post(url, data=data)
     try:
         dict_ = res.json()
-    except requests.exceptions.JSONDecodeError:
+    except Exception:
         print('Not a valid JSON')
     else:
         if dict_:
