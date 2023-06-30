@@ -12,11 +12,11 @@ def main():
     url = sys.argv[1]
     value = {'email': sys.argv[2]}
     data = urllib.parse.urlencode(value)
-    data = data.encode('ascii')
+    data = data.encode('utf-8')
     req = urllib.request.Request(url, data)
     with urllib.request.urlopen(req) as response:
-        page = response.read()
-
+        page = response.read().decode('utf-8')
+    print(page)
 
 if __name__ == '__main__':
     main()
