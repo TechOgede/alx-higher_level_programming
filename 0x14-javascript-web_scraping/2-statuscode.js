@@ -6,6 +6,6 @@ request.get(url, function (error, response, body) {
   if (error) {
     console.error(error);
   } else {
-    console.log(response && response.statusCode);
+    console.log(response && `code: ${response.statusCode}`);
   }
 });
