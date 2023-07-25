@@ -12,10 +12,10 @@ request.get(url, function (error, response, body) {
 
     for (const task of tasks) {
       if (task.completed === true) {
-        if (task.userId in usersAndTasks) {
-          usersAndTasks[`${task.userId}`]++;
+        if (usersAndTasks[task.userId] === undefined) {
+          usersAndTasks[task.userId] = 1;
         } else {
-          usersAndTasks[`${task.userId}`] = 1;
+          usersAndTasks[task.userId]++;
         }
       }
     }
