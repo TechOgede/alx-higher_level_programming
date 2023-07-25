@@ -1,18 +1,20 @@
 #!/usr/bin/node
 const request = require('request');
 const url = `${process.argv[2]}`;
-const WedgeAntilles = 'https://swapi-api.alx-tools.com/api/people/18/';
+let count = 0;
+
 request(url, function (error, response, body) {
   if (error) {
     console.error(error);
   } else {
-    let count = 0;
     const data = JSON.parse(body);
     for (const episode of data.results) {
-      if (episode.characters.includes(WedgeAntilles)) {
-        count++;
+      for (const character of episode.characters) {
+        if (character.search('18') > 0) {
+          count++;
+        }
       }
     }
-    console.log(count);
   }
+  console.log(count);
 });
