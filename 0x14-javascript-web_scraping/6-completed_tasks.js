@@ -11,7 +11,7 @@ request.get(url, function (error, response, body) {
     const usersAndTasks = {};
 
     for (const task of tasks) {
-      if (task.completed) {
+      if (task.completed === true) {
         if (task.userId in usersAndTasks) {
           usersAndTasks[`${task.userId}`]++;
         } else {
